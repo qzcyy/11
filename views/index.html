@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="mainCon"></div>
+    <button>send</button>
+</body>
+<script>
+    var socket = io.connect();
+    socket.emit('online');
+    socket.on('send',function (data) {
+//       document.getElementById('mainCon').appendChild(document.createElement('<span>'+data.msg+'</span>'));
+        console.log(data);
+    });
+    document.getElementsByTagName('button')[0].addEventListener('click',function () {
+        console.log(1);
+        socket.emit('request','hahaha');
+    })
+</script>
+</html>
