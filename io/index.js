@@ -8,6 +8,7 @@ var io = {
                     msg: '我收到的信息是' + data,
                     user: 'admin'
                 })
+                console.log('提交')
             })
         })
     }
